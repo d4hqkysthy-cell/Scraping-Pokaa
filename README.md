@@ -66,5 +66,23 @@ Définition de toutes les fonctions du scraper :
 
 Boucle principale qui parcourt les pages du listing, filtre les articles de la catégorie "Sorties", analyse chaque article et affiche les résultats.
 
+##  La détection de dates par Regex
+
+C'est le cœur du projet. Les dates dans les articles Pokaa peuvent prendre de nombreuses formes. Nous avons défini 3 patterns Regex pour les couvrir :
+
+**Pattern 1 — Plage de dates**
+```
+"du 7 au 9 mars"  →  (07/03, 09/03)
+"du 20 mars au 2 avril"  →  (20/03, 02/04)
+```
+**Pattern 2 — Dates multiples**
+```
+"les 3 et 10 mars"  →  (03/03) et (10/03)
+```
+**Pattern 3 — Date unique**
+```
+"vendredi 7 mars"  →  (07/03)
+"le 8 mars"  →  (08/03)
+```
 
 
